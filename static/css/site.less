@@ -1,0 +1,103 @@
+@color-blue: #42A8C0;
+@color-dark-blue: #2d7788;
+
+body {
+  background-color: #eeeeee;
+}
+
+.left {
+  background-color: @color-blue;
+  color: white;
+
+  .main-section {
+    text-align: center;
+    background-color: @color-dark-blue;
+    padding: 15px;
+
+    img {
+      width: 75%;
+    }
+
+    h1 {
+      padding-top: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .other-sections {
+    padding-top: 30px;
+    padding-left: 15px;
+
+    .title {
+      color: burlywood;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .section {
+      a {
+        padding-left: 15px;
+        color: white;
+      }
+
+      .degree {
+        font-weight: bold;
+      }
+      .time {
+        padding-bottom: 15px;
+        font-size: 0.98rem;
+      }
+    }
+
+    .item {
+      font-size: 0.98rem;
+    }
+
+  }
+}
+
+.right {
+  background-color: white;
+
+  a {
+    color: cadetblue;
+  }
+
+  .section {
+    padding-top: 15px;
+    text-align: justify;
+
+    h4 {
+      color: @color-blue;
+    }
+    h4 > .title {
+      padding-left: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .summary {
+      padding-right: 15px;
+      font-size: 0.98rem;
+    }
+
+    .item {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .location {
+
+      }
+      .time {
+
+        font-style: italic;
+        padding-bottom: 10px;
+      }
+      .title {
+        color: cadetblue;
+        font-weight: bold;
+
+        padding-left: 0;
+      }
+
+    }
+  }
+}

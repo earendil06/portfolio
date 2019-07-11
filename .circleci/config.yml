@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    environment:
+      IMAGE_NAME: earendil06/portfolio
+      TAG: latest
+    docker:
+      - image: circleci/python:3.6-stretch
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build docker image
+          command: docker build -t $IMAGE_NAME:$TAG .
+      - run:
+          name: Login to DockerHub
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Deploy the docker image
+          command: docker push $IMAGE_NAME:$TAG
+
+#      - run:
+#          name: Deploy app to Digital Ocean Server via Docker
+#          command: |
+#            ssh -o StrictHostKeyChecking=no root@hello.dpunks.org "/bin/bash ./deploy_app.sh ariv3ra/$IMAGE_NAME:$TAG"

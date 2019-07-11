@@ -1,0 +1,6 @@
+SoA, Microservices, Apache Camel, Apache Kafka, Docker, Spring
+.Net Core MVC C# cross platform
+Web JavaScript/TypeScript, Html/Css, Node.js, Vue.js
+DSL, Groovy, Lex/Yacc
+Android dev
+Linux systems, Python scripts
