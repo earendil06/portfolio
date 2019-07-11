@@ -1,0 +1,10 @@
+version: '3'
+services:
+  portfolio-webserver:
+    container_name: portfolio
+    image: earendil06/portfolio:latest
+    ports:
+      - "5000:5000"
+    labels:
+      subdomain: portfolio
+      port_fwd: 5000

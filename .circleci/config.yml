@@ -19,7 +19,12 @@ jobs:
           name: Deploy the docker image
           command: docker push $IMAGE_NAME:$TAG
 
-#      - run:
-#          name: Deploy app to Digital Ocean Server via Docker
-#          command: |
-#            ssh -o StrictHostKeyChecking=no root@hello.dpunks.org "/bin/bash ./deploy_app.sh ariv3ra/$IMAGE_NAME:$TAG"
+      - run: ssh-keyscan vps.florentpastor.com >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "d8:8e:cb:71:34:85:58:b0:85:1c:69:06:35:2b:4c:e7"
+      - run:
+          name: Deploy over SSH
+          command: |
+            scp docker-compose.yml root@vps.florentpastor.com:~/portfolio
+            cd portfolio && docker-compose pull && docker-compose up -d --force-recreate
