@@ -27,4 +27,5 @@ jobs:
           name: Deploy over SSH
           command: |
             scp docker-compose.yml root@vps.florentpastor.com:~/portfolio
-            cd portfolio && docker-compose pull && docker-compose up -d --force-recreate
+            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml pull
+            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml up -d --force-recreate
