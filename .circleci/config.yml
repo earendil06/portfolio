@@ -22,7 +22,7 @@ jobs:
       - run: ssh-keyscan vps.florentpastor.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-            - "2e:15:12:4a:9b:06:35:a4:7f:09:6d:26:21:4b:45:c1"
+            - "25:1a:cb:cd:e7:e9:12:61:3b:2b:b0:9e:c2:0c:2e:c3"
       - run:
           name: Deploy over SSH
           command: |
