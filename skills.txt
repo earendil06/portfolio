@@ -4,4 +4,3 @@ Web JavaScript/TypeScript, Html/Css, Node.js, Vue.js
 DSL, Groovy, Lex/Yacc
 Android dev
 Linux systems, Python scripts
-test

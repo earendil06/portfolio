@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>Pastor's blog</title>
+    <link href="http://portfolio.florentpastor.com/feed" rel="self"/>
+    <link href="http://portfolio.florentpastor.com/"/>
+    <updated>2019-06-17T14:57:57+00:00</updated>
+    <id>http://portfolio.florentpastor.com/</id>
+    <author>
+        <name>Florent Pastor</name>
+    </author>
+
+    {% for item in items %}
+        <entry>
+            <title>{{ item.entry.title }}</title>
+            <link href="{{ item.entry.link }}"/>
+            <updated>{{ item.entry.updated }}</updated>
+            <id>{{ item.entry.id }}</id>
+            <content type="html">{{ item.entry.content }}</content>
+        </entry>
+    {% endfor %}
+
+</feed>
+
