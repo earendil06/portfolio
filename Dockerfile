@@ -9,5 +9,6 @@ COPY . ${APP_DIR}
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
+HEALTHCHECK CMD curl --fail http://localhost:5000 || exit 1
 
 CMD [ "python", "./app.py" ]

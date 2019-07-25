@@ -1,11 +1,11 @@
 <!doctype html>
 <head>
-     <meta charset="utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfolio - Florent Pastor</title>
 
-{#    <link rel="alternate" type="application/rss+xml"#}
-{#          title="Interesting posts" href="/posts.rss"/>#}
+    {#    <link rel="alternate" type="application/rss+xml"#}
+    {#          title="Interesting posts" href="/posts.rss"/>#}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,8 +21,107 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+
 </head>
 
 <div class="container">
-    {% block content %}{% endblock %}
+    <div class="row container">
+        <div class="col-md-4 col-xs-12 left">
+            <div class="main-section">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="42"/>
+                <h1>Florent Pastor</h1>
+                <h4>Software architect developer</h4>
+            </div>
+
+            <div class="other-sections">
+                <div class="section">
+                    <ul class="list-unstyled">
+                        <li class="item">
+                            <i class="fa fa-envelope"></i><a href="mailto: contact@florentpastor.com">contact@florentpastor.com</a>
+                        </li>
+                        <li class="item">
+                            <i class="fab fa-linkedin"></i><a
+                                href="https://www.linkedin.com/in/florent-pastor-034243133" target="_blank">Follow
+                            my LinkedIn</a>
+                        </li>
+                        <li class="item">
+                            <i class="fab fa-github"></i><a href="https://github.com/earendil06" target="_blank">Follow
+                            my GitHub</a>
+                        </li>
+                        <li class="item">
+                            <i class="fas fa-rss"></i><a href="/rss" target="_blank">rss/atom feed</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="section">
+                    <h4 class="title">Education</h4>
+                    <div class="item">
+                        <h5 class="degree">MSC degree in software architecture</h5>
+                        <h5 class="location">University of Nice</h5>
+                        <div class="time">2017 - 2018</div>
+                    </div>
+                    <div class="item">
+                        <h5 class="degree">MSC degree in computer science</h5>
+                        <h5 class="location">University of Nice</h5>
+                        <div class="time">2016 - 2017</div>
+                    </div>
+                    <div class="item">
+                        <h5 class="degree">BS degree in computer science</h5>
+                        <h5 class="location">University of Nice</h5>
+                        <div class="time">2013 - 2016</div>
+                    </div>
+                    <div class="item">
+                        <h5 class="degree">Scientific secondary school diploma</h5>
+                        <h5 class="location">P&M Curie High-School, Menton</h5>
+                        <div class="time">2012</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="title">Languages</h4>
+                    <ul class="list-unstyled">
+                        <li class="item">French (Native)</li>
+                        <li class="item">English</li>
+                        <li class="item">Italian</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h4 class="title">Interests</h4>
+                    <ul class="list-unstyled">
+                        <li class="item">Swimmer</li>
+                        <li class="item">Skier</li>
+                        <li class="item">Singer, Folk dancer, Musician</li>
+                        <li class="item">Geek, Skipper</li>
+                        <li class="item">Kick boxer</li>
+                    </ul>
+                </div>
+
+                {% if blogs|length > 0 %}
+                    <div class="section">
+                        <h4 class="title">Blog</h4>
+                        <ul class="list-unstyled">
+                            {% for item in blogs %}
+                                <li class="item">
+                                    <a href="{{ url_for('blog', id=item.id()) }}">{{ item.title() }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+
+
+        </div>
+        <div class="col-md-8 col-xs-12 right">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+
 </div>

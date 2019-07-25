@@ -12,11 +12,11 @@
 
     {% for item in items %}
         <entry>
-            <title>{{ item.entry.title }}</title>
-            <link href="{{ item.entry.link }}"/>
-            <updated>{{ item.entry.updated }}</updated>
-            <id>{{ item.entry.id }}</id>
-            <content type="html">{{ item.entry.content }}</content>
+            <title>{{ item.title() }}</title>
+            <link href="{{ item.link() }}"/>
+            <updated>{{ item.date_rss() }}</updated>
+            <id>{{ item.id() }}</id>
+            <content type="text/markdown">{{ item.content() }}</content>
         </entry>
     {% endfor %}
 

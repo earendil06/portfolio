@@ -1,213 +1,133 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="row">
-        <div class="col-md-4 col-xs-12 left">
-            <div class="main-section">
-                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="42"/>
-                <h1>Florent Pastor</h1>
-                <h4>Software architect developer</h4>
-            </div>
-
-            <div class="other-sections">
-                <div class="section">
-                    <ul class="list-unstyled">
-                        <li class="item">
-                            <i class="fa fa-envelope"></i><a href="mailto: contact@florentpastor.com">contact@florentpastor.com</a>
-                        </li>
-                        <li class="item">
-                            <i class="fab fa-linkedin"></i><a
-                                href="https://www.linkedin.com/in/florent-pastor-034243133" target="_blank">Follow
-                            my LinkedIn</a>
-                        </li>
-                        <li class="item">
-                            <i class="fab fa-github"></i><a href="https://github.com/earendil06" target="_blank">Follow
-                            my GitHub</a>
-                        </li>
-                        <li class="item">
-                            <i class="fas fa-rss"></i><a href="/rss" target="_blank">rss/atom feed</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="section">
-                    <h4 class="title">Education</h4>
-                    <div class="item">
-                        <h5 class="degree">MSC degree in software architecture</h5>
-                        <h5 class="location">University of Nice</h5>
-                        <div class="time">2017 - 2018</div>
-                    </div>
-                    <div class="item">
-                        <h5 class="degree">MSC degree in computer science</h5>
-                        <h5 class="location">University of Nice</h5>
-                        <div class="time">2016 - 2017</div>
-                    </div>
-                    <div class="item">
-                        <h5 class="degree">BS degree in computer science</h5>
-                        <h5 class="location">University of Nice</h5>
-                        <div class="time">2013 - 2016</div>
-                    </div>
-                    <div class="item">
-                        <h5 class="degree">Scientific secondary school diploma</h5>
-                        <h5 class="location">P&M Curie High-School, Menton</h5>
-                        <div class="time">2012</div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h4 class="title">Languages</h4>
-                    <ul class="list-unstyled">
-                        <li class="item">French (Native)</li>
-                        <li class="item">English</li>
-                        <li class="item">Italian</li>
-                    </ul>
-                </div>
-
-                <div class="section">
-                    <h4 class="title">Interests</h4>
-                    <ul class="list-unstyled">
-                        <li class="item">Swimmer</li>
-                        <li class="item">Skier</li>
-                        <li class="item">Singer, Folk dancer, Musician</li>
-                        <li class="item">Geek</li>
-                        <li class="item">Kick boxer</li>
-                    </ul>
-                </div>
-            </div>
-
-
+    <div class="section">
+        <h4><i class="fa fa-user"></i><span class="title">About me</span></h4>
+        <hr>
+        <div class="summary">
+            Hi, I'm Florent, software architect developer.
+            <br/>
+            Since 2018, I have graduated from the University of Nice in software architecture.
+            Now, I am working for Amadeus SAS in Sophia-Antipolis in a DevOps team.
+            I focus my efforts every days for better software designs.
+            <br/>
+            Please take a look on my portfolio, I list here my personal projects, my skills and experiences.
+            <br/>
+            Enjoy your visit :)
+            <br/>
         </div>
-        <div class="col-md-8 col-xs-12 right">
-            <div class="section">
-                <h4><i class="fa fa-user"></i><span class="title">About me</span></h4>
-                <hr>
+    </div>
+
+    <div class="section">
+        <h4><i class="fa fa-briefcase"></i><span class="title">Experiences</span></h4>
+        <hr>
+        <div class="item">
+            <h5 class="title">DevOps Architect</h5>
+            <div class="location">Amadeus IT Group, Sophia-Antipolis (France)</div>
+            <div class="time">2018 - Present</div>
+            <div class="summary">
+                <b>From October 2018 to April 2019 :</b><br/>
+                Java backend developer and DevOps support in a self booking tool project.
+                Scrum team member for the development of business features.
+                <br/>
+
+                <b>Since April 2019 :</b><br/>
+                Member of the DevOps team.<br/>
+                Definitions and development of CI/CD pipelines for the self booking tool project.<br/>
+                Improvement of the project ecosystem by integrating build/deploy docker containers.<br/>
+                Setup of a DB fallback compliant ecosystem.<br/>
+            </div>
+        </div>
+
+        <div class="item">
+            <h5 class="title">.Net Core Web Developer</h5>
+            <div class="location">Andeol SAS, Sophia Antipolis (France)</div>
+            <div class="time">2016 - 2018</div>
+            <div class="summary">
+                On measure development of a SPA based on cartography to manage sectorizations, compare and
+                generate them. The tool is integrated into a CRM web interface.
+                Technology used is Asp.Net Core 2.0 for the server part and TypeScript/Vue.js for the client
+                part.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h4><i class="fa fa-archive"></i><span class="title">Projects</span></h4>
+        <hr>
+        <div class="summary">
+            Here are my differents projects I worked on.
+        </div>
+
+        <div class="item">
+            <h5 class="title"><a href="https://github.com/earendil06/Storm" target="_blank">Storm</a></h5>
+
+            <div class="summary">
+                Toolchain with the goal to help a Dungeon Master to run a D&D game.
+                This is not yet another online role playing game tool,
+                it is meant to be used for live pen and papers sessions.
+                All dice rolls should be done IRL,
+                the toolchain should only provide information on what to do but
+                not do it for you.
+                <br/>
+                Please visit <a target="_blank" href='https://storm.florentpastor.com'>
+                <b>https://storm.florentpastor.com</b></a> to play !!
+            </div>
+
+            <div class="item">
+                <h5 class="title">
+                    <a href="https://github.com/AnthonyFusco/SSL-al" target="_blank">Sensor Simulation Lab</a>
+                </h5>
                 <div class="summary">
-                    Hi, I'm Florent, software architect developer.
-                    <br/>
-                    Since 2018, I have graduated from the University of Nice in software architecture.
-                    Now, I am working for Amadeus SAS in Sophia-Antipolis in a DevOps team.
-                    I focus my efforts every days for better software designs.
-                    <br/>
-                    Please take a look on my portfolio, I list here my personal projects, my skills and experiences.
-                    <br/>
-                    Enjoy your visit :)
-                    <br/>
+                    The Gartner group's forecasts predict up to 26 billions of things that could be connected to
+                    the Internet by 2020 forming the Internet of Things (IoT). This project is a DSL middleware
+                    which allow us to make simulations of a lot of sensor networks and analyze them with
+                    graphana.
                 </div>
             </div>
 
-            <div class="section">
-                <h4><i class="fa fa-briefcase"></i><span class="title">Experiences</span></h4>
-                <hr>
-                <div class="item">
-                    <h5 class="title">DevOps Architect</h5>
-                    <div class="location">Amadeus IT Group, Sophia-Antipolis (France)</div>
-                    <div class="time">2018 - Present</div>
-                    <div class="summary">
-                        <b>From October 2018 to April 2019 :</b><br/>
-                        Java backend developer and DevOps support in a self booking tool project.
-                        Scrum team member for the development of business features.
-                        <br/>
-
-                        <b>Since April 2019 :</b><br/>
-                        Member of the DevOps team.<br/>
-                        Definitions and development of CI/CD pipelines for the self booking tool project.<br/>
-                        Improvement of the project ecosystem by integrating build/deploy docker containers.<br/>
-                        Setup of a DB fallback compliant ecosystem.<br/>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <h5 class="title">.Net Core Web Developer</h5>
-                    <div class="location">Andeol SAS, Sophia Antipolis (France)</div>
-                    <div class="time">2016 - 2018</div>
-                    <div class="summary">
-                        On measure development of a SPA based on cartography to manage sectorizations, compare and
-                        generate them. The tool is integrated into a CRM web interface.
-                        Technology used is Asp.Net Core 2.0 for the server part and TypeScript/Vue.js for the client
-                        part.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h4><i class="fa fa-archive"></i><span class="title">Projects</span></h4>
-                <hr>
+            <div class="item">
+                <h5 class="title">
+                    <a href="https://github.com/earendil06/lab1-travel-agency-fusco-suignard-balde-pastor"
+                       target="_blank">Travel Agency</a>
+                </h5>
                 <div class="summary">
-                    Here are my differents projects I worked on.
-                </div>
-
-                <div class="item">
-                    <h5 class="title"><a href="https://github.com/earendil06/Storm" target="_blank">Storm</a></h5>
-
-                    <div class="summary">
-                        Toolchain with the goal to help a Dungeon Master to run a D&D game.
-                        This is not yet another online role playing game tool,
-                        it is meant to be used for live pen and papers sessions.
-                        All dice rolls should be done IRL,
-                        the toolchain should only provide information on what to do but
-                        not do it for you.
-                        <br/>
-                        Please visit <a target="_blank" href='https://storm.florentpastor.com'>
-                        <b>https://storm.florentpastor.com</b></a> to play !!
-                    </div>
-
-                    <div class="item">
-                        <h5 class="title">
-                            <a href="https://github.com/AnthonyFusco/SSL-al" target="_blank">Sensor Simulation Lab</a>
-                        </h5>
-                        <div class="summary">
-                            The Gartner group's forecasts predict up to 26 billions of things that could be connected to
-                            the Internet by 2020 forming the Internet of Things (IoT). This project is a DSL middleware
-                            which allow us to make simulations of a lot of sensor networks and analyze them with
-                            graphana.
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <h5 class="title">
-                            <a href="https://github.com/earendil06/lab1-travel-agency-fusco-suignard-balde-pastor"
-                               target="_blank">Travel Agency</a>
-                        </h5>
-                        <div class="summary">
-                            Travel application made to retrieve flights, hotels and rental cars for a trip and submit
-                            proposals of travels. Application developed by using microservices approach with Apache
-                            Camel integration. REST/SOAP/RPC.
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <h5 class="title">
-                            <a href="https://github.com/06tom06/AL" target="_blank">SmartCar</a>
-                        </h5>
-                        <div class="summary">
-                            Application to simulate a smart car city where the traffic lights are optimized to change
-                            for better traffic. Event drive design application with use of Spring and Apache Kafka.
-                            Choco constraints solver for the business problem part.
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <h5 class="title">
-                            <a href="http://lamentonnaise.fr" target="_blank">Mentonnaise charity website</a>
-                        </h5>
-                        <div class="summary">
-                            The Mentonnaise is a charity of the law 1901 which performs benevolence activities and
-                            support in performing arts.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h4 class="title"><i class="fa fa-rocket"></i><span>Skills</span></h4>
-                    <hr>
-                    <ul class="list-unstyled">
-                        {% for item in skills %}
-                            <li style="padding-top: 3px"> {{ item }}</li>
-                        {% endfor %}
-                    </ul>
+                    Travel application made to retrieve flights, hotels and rental cars for a trip and submit
+                    proposals of travels. Application developed by using microservices approach with Apache
+                    Camel integration. REST/SOAP/RPC.
                 </div>
             </div>
+
+            <div class="item">
+                <h5 class="title">
+                    <a href="https://github.com/06tom06/AL" target="_blank">SmartCar</a>
+                </h5>
+                <div class="summary">
+                    Application to simulate a smart car city where the traffic lights are optimized to change
+                    for better traffic. Event drive design application with use of Spring and Apache Kafka.
+                    Choco constraints solver for the business problem part.
+                </div>
+            </div>
+
+            <div class="item">
+                <h5 class="title">
+                    <a href="http://lamentonnaise.fr" target="_blank">Mentonnaise charity website</a>
+                </h5>
+                <div class="summary">
+                    The Mentonnaise is a charity of the law 1901 which performs benevolence activities and
+                    support in performing arts.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4 class="title"><i class="fa fa-rocket"></i><span>Skills</span></h4>
+            <hr>
+            <ul class="list-unstyled">
+                {% for item in skills %}
+                    <li style="padding-top: 3px"> {{ item }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 {% endblock %}
