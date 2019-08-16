@@ -4,9 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfolio - Florent Pastor</title>
 
-    {#    <link rel="alternate" type="application/rss+xml"#}
-    {#          title="Interesting posts" href="/posts.rss"/>#}
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet/less" href="{{ url_for('static', filename='css/site.less') }}"/>
@@ -26,9 +23,9 @@
 
 </head>
 
-<div class="container">
-    <div class="row container">
-        <div class="col-md-4 col-xs-12 left">
+<div class="main-container">
+    <div class="row">
+        <div class="col-md-3 col-xs-12 left">
             <div class="main-section">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="42"/>
                 <h1>Florent Pastor</h1>
@@ -117,7 +114,7 @@
 
 
         </div>
-        <div class="col-md-8 col-xs-12 right">
+        <div class="col-md-9 col-xs-12 right">
             {% block content %}
 
             {% endblock %}
