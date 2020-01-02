@@ -41,3 +41,9 @@ class Blog:
 
     def is_valid(self):
         return self.id() != '' and self.title() != '' and self.date() != ''
+
+
+class Picture:
+    def __init__(self, title, url):
+        self.url = url
+        self.title = title

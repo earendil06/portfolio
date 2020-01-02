@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <b><a href="{{ url_for('home') }}">Back to main page</a></b>
+    {% for item in pictures %}
+        <div class="item" style="padding-bottom: 30px">
+            <p><b>{{ item.title }}</b></p>
+            <img width="75%" src="{{ item.url }}" alt="{{ item.title }}"/>
+        </div>
+    {% endfor %}
+{% endblock %}

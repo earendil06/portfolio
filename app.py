@@ -1,9 +1,10 @@
 import os
-
 import markdown2
+import urllib.request
+import xmltodict
 from flask import Flask, render_template, make_response
 
-from core.entities import Blog
+from core.entities import Blog, Picture
 from core.utils import get_file_lines
 
 app = Flask(__name__)
@@ -40,6 +41,21 @@ def rss():
     response = make_response(rss_xml)
     response.headers['Content-Type'] = 'application/rss+xml'
     return response
+
+
+def get_pictures():
+    url = 'https://www.flickr.com/services/feeds/photos_public.gne?id=186291426@N04&lang=en-us&format=rss_200'
+    stream = urllib.request.urlopen(url)
+    data = stream.read()
+    stream.close()
+    items = list(xmltodict.parse(data)['rss']['channel']['item'])
+    pictures = [Picture(item['title'], item['media:content']['@url']) for item in items]
+    return pictures
+
+
+@app.route('/drone', methods=['GET'])
+def drone():
+    return render_template('drone.html', pictures=get_pictures(), blogs=get_blogs())
 
 
 if __name__ == '__main__':

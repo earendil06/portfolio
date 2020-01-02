@@ -1,3 +1,4 @@
+xmltodict
 flask
 markdown2
 parse
