@@ -5,8 +5,8 @@ services:
     image: earendil06/portfolio:latest
     ports:
       - "5000:5000"
-    volumes:
-      - /root/rss_items:/app/rss_items
+#    volumes:
+#      - /root/rss_items:/app/rss_items
     labels:
       subdomain: portfolio
       port_fwd: 5000

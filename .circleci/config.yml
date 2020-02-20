@@ -19,13 +19,13 @@ jobs:
           name: Deploy the docker image
           command: docker push $IMAGE_NAME:$TAG
 
-      - run: ssh-keyscan vps.florentpastor.com >> ~/.ssh/known_hosts
-      - add_ssh_keys:
-          fingerprints:
-            - "25:1a:cb:cd:e7:e9:12:61:3b:2b:b0:9e:c2:0c:2e:c3"
-      - run:
-          name: Deploy over SSH
-          command: |
-            scp docker-compose.yml root@vps.florentpastor.com:~/portfolio
-            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml pull
-            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml up -d --force-recreate
+#      - run: ssh-keyscan vps.florentpastor.com >> ~/.ssh/known_hosts
+#      - add_ssh_keys:
+#          fingerprints:
+#            - "25:1a:cb:cd:e7:e9:12:61:3b:2b:b0:9e:c2:0c:2e:c3"
+#      - run:
+#          name: Deploy over SSH
+#          command: |
+#            scp docker-compose.yml root@vps.florentpastor.com:~/portfolio
+#            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml pull
+#            ssh root@vps.florentpastor.com docker-compose -f ./portfolio/docker-compose.yml up -d --force-recreate
