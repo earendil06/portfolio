@@ -55,7 +55,7 @@ def get_pictures():
 
 @app.route('/drone', methods=['GET'])
 def drone():
-    return render_template('drone.html', pictures=get_pictures(), blogs=get_blogs())
+    return render_template('drone.html', pictures=get_pictures())
 
 
 if __name__ == '__main__':
