@@ -47,9 +47,9 @@
                             <i class="fab fa-github"></i><a href="https://github.com/earendil06" target="_blank">Follow
                             my GitHub</a>
                         </li>
-{#                        <li class="item">#}
-{#                            <i class="fas fa-rss"></i><a href="/rss" target="_blank">rss/atom feed</a>#}
-{#                        </li>#}
+                        <li class="item">
+                            <i class="fas fa-rss"></i><a href="/rss" target="_blank">rss/atom feed</a>
+                        </li>
                     </ul>
 
                 </div>
@@ -105,7 +105,8 @@
                         <ul class="list-unstyled">
                             {% for item in blogs %}
                                 <li class="item">
-                                    <a href="{{ url_for('blog', id=item.id()) }}">{{ item.title() }}</a>
+                                 <span class="blog-span">{{ item.date }}</span><br/>
+                                    <a href="{{ url_for('blog', id=item.id()) }}">{{ item.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
