@@ -3,10 +3,6 @@ services:
   portfolio-webserver:
     container_name: portfolio
     image: earendil06/portfolio:latest
+    restart: always
     ports:
-      - "5000:5000"
-#    volumes:
-#      - /root/rss_items:/app/rss_items
-    labels:
-      subdomain: portfolio
-      port_fwd: 5000
+      - "8000:5000"
