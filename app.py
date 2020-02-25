@@ -3,7 +3,7 @@ import markdown2
 import urllib.request
 import xmltodict
 import json
-from flask import Flask, render_template, make_response
+from flask import Flask, render_template, make_response, redirect, url_for
 
 from core.entities import Picture, Blog
 from core.utils import get_file_lines
@@ -11,6 +11,7 @@ from core.utils import get_file_lines
 app = Flask(__name__)
 PORT = 5000
 FILE_SKILLS = "skills.txt"
+MAX_DRONE_PICTURE_PER_PAGE = 3
 
 
 def get_skills():
@@ -36,7 +37,7 @@ def home():
 def blog(id):
     items = [item for item in get_blogs() if item.id() == id]
     if len(items) == 0:
-        return home()
+        return redirect(url_for('.home'))
     return render_template('blog.html', content=markdown2.markdown(items[0].content()), blogs=get_blogs())
 
 
@@ -60,7 +61,16 @@ def get_pictures():
 
 @app.route('/drone', methods=['GET'])
 def drone():
-    return render_template('drone.html', pictures=get_pictures())
+    return redirect(url_for('.drone_page', page=1))
+
+
+@app.route('/drone/<int:page>', methods=['GET'])
+def drone_page(page):
+    pictures = get_pictures()
+    groups = [pictures[i:i + MAX_DRONE_PICTURE_PER_PAGE] for i in range(0, len(pictures), MAX_DRONE_PICTURE_PER_PAGE)]
+    if page < 1 or page > len(groups):
+        return redirect(url_for('.home'))
+    return render_template('drone.html', pictures=groups[page - 1], page=page, n_pages=len(groups))
 
 
 if __name__ == '__main__':

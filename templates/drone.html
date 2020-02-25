@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <b><a href="{{ url_for('home') }}">Back to main page</a></b>
-    {% for item in pictures %}
-        <div class="item" style="padding-bottom: 30px">
-            <p><b>{{ item.title }}</b></p>
-            <img width="75%" src="{{ item.url }}" alt="{{ item.title }}"/>
-        </div>
-    {% endfor %}
+  <div style="display: inline-flex">
+    <a style="padding-right: 30px" href="{{ url_for('home') }}"><b>Home</b></a>
+    {% if n_pages > 1 %}
+      <p style="padding-right: 15px">Pages:</p>
+      {% for i in range(1, n_pages + 1) %}
+        {% if page == i %}
+          <p style="padding-right: 10px">{{ i }}</p>
+        {% else %}
+          <a style="padding-right: 10px" href="{{ url_for('drone_page', page=i) }}">{{ i }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+
+
+  {% for item in pictures %}
+    <div class="item" style="padding-bottom: 30px">
+      <p><b>{{ item.title }}</b></p>
+      <img width="75%" src="{{ item.url }}" alt="{{ item.title }}"/>
+    </div>
+  {% endfor %}
+
 {% endblock %}

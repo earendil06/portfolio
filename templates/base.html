@@ -27,7 +27,9 @@
     <div class="row">
         <div class="col-md-3 col-xs-12 left">
             <div class="main-section">
-                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="42"/>
+                <a href="{{ url_for("home") }}">
+                  <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="42"/>
+                </a>
                 <h1>Florent Pastor</h1>
                 <h4>Software architect developer</h4>
             </div>
