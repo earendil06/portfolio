@@ -73,6 +73,10 @@ def drone_page(page):
     return render_template('drone.html', pictures=groups[page - 1], page=page, n_pages=len(groups))
 
 
+@app.route('/health', methods=['GET'])
+def health():
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', PORT))
     app.run(host='0.0.0.0', port=port)
