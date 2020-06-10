@@ -16,7 +16,8 @@
             <br/>
             Enjoy your visit :)
             <br/>
-            I recently got a drone, a DJI Mavic Pro platinum. It is incredibly fun : <a href="{{ url_for('drone') }}"><b>Pictures</b></a>.
+            I recently got a drone, a DJI Mavic Pro platinum. It is incredibly fun : <a
+                href="{{ url_for('drone') }}"><b>Pictures</b></a>.
             <br/>
         </div>
     </div>
@@ -29,7 +30,7 @@
             <div class="location">Amadeus IT Group, Sophia-Antipolis (France)</div>
             <div class="time">2018 - Present</div>
             <div class="summary">
-                <b>From October 2018 to April 2019 :</b><br/>
+                <b>From October 2018 to April 2019:</b><br/>
                 Java backend developer and DevOps support for the self booking tool project of Amadeus.
                 Working in a scrum team. While working on different features, I put in place tools in order
                 to improve the dev environment:
@@ -39,7 +40,7 @@
                     <li>On demand deployment of external web services needed in the system</li>
                     <li>On demand deployment of a fake server to mock responses</li>
                 </ul>
-                <b>Since April 2019 :</b><br/>
+                <b>From April 2019 to May 2020:</b><br/>
                 Member of the new DevOps team created for the self booking tool
                 <ul>
                     <li>Containerization of every service</li>
@@ -57,6 +58,17 @@
                         needed apps
                     </li>
                 </ul>
+                <b>Since March 2020:</b>
+                <ul>
+                    <li>
+                        Responsible of OpenShift migration of the whole ecosystem to have a complete cloud hosted solution on the PaaS.
+                    </li>
+                    <li>
+                        Externalization of a part of the monolith which slows down the app.
+                        Communication design based on events with RabbitMQ.
+                    </li>
+                </ul>
+
             </div>
         </div>
 
@@ -197,5 +209,15 @@
                 <li style="padding-top: 3px"> {{ item }}</li>
             {% endfor %}
         </ul>
+    </div>
+
+    <hr>
+    <div>
+        <p style="font-size: 12px">
+            Portfolio source code <a href="https://github.com/earendil06/portfolio" target="_blank">here</a><br/>
+            Writen in Python (flask). CI/CD with circleci.<br/>
+            Executed with docker.<br/>
+            Drone pictures managed with flicker.
+        </p>
     </div>
 {% endblock %}
